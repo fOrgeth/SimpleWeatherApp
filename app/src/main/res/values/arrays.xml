@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cities_list">
+        <item>Saint Petersburg</item>
+        <item>Moscow</item>
+        <item>Kazan</item>
+        <item>London</item>
+        <item>New York</item>
+        <item>Norilsk</item>
+        <item>Novosibirsk</item>
+        <item>Tolyatti</item>
+        <item>Samara</item>
+        <item>Yaroslavl</item>
+    </string-array>
+</resources>
