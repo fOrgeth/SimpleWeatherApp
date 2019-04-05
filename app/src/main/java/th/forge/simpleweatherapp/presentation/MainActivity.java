@@ -7,19 +7,15 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 
-import java.io.IOException;
-
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import th.forge.simpleweatherapp.R;
 import th.forge.simpleweatherapp.app.App;
-import th.forge.simpleweatherapp.data.repository.Entity.City;
+import th.forge.simpleweatherapp.data.repository.entity.City;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(bottomNav, navController);
         NavigationUI.setupActionBarWithNavController(this, navController);
 
-        App.getApiService().getCurrentWeather("Moscow").enqueue(new Callback<City>() {
+        /*App.getApiService().getCurrentWeather("Moscow").enqueue(new Callback<City>() {
             @Override
             public void onResponse(Call<City> call, Response<City> response) {
                 if (response.isSuccessful()) {
@@ -54,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             public void onFailure(Call<City> call, Throwable t) {
 
             }
-        });
+        });*/
 
     }
 

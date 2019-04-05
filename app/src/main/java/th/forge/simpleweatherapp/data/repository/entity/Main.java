@@ -1,4 +1,4 @@
-package th.forge.simpleweatherapp.data.repository.Entity;
+package th.forge.simpleweatherapp.data.repository.entity;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 public class Main {
     @SerializedName("temp")
     @Expose
-    private Long temp;
+    private Double temp;
     @SerializedName("pressure")
     @Expose
     private Long pressure;
@@ -15,16 +15,16 @@ public class Main {
     private Long humidity;
     @SerializedName("temp_min")
     @Expose
-    private Long tempMin;
+    private Double tempMin;
     @SerializedName("temp_max")
     @Expose
-    private Long tempMax;
+    private Double tempMax;
 
-    public Long getTemp() {
+    public Double getTemp() {
         return temp;
     }
 
-    public void setTemp(Long temp) {
+    public void setTemp(Double temp) {
         this.temp = temp;
     }
 
@@ -44,19 +44,19 @@ public class Main {
         this.humidity = humidity;
     }
 
-    public Long getTempMin() {
+    public Double getTempMin() {
         return tempMin;
     }
 
-    public void setTempMin(Long tempMin) {
+    public void setTempMin(Double tempMin) {
         this.tempMin = tempMin;
     }
 
-    public Long getTempMax() {
+    public Double getTempMax() {
         return tempMax;
     }
 
-    public void setTempMax(Long tempMax) {
+    public void setTempMax(Double tempMax) {
         this.tempMax = tempMax;
     }
 }

@@ -1,8 +1,9 @@
-package th.forge.simpleweatherapp.data.repository.Entity;
+package th.forge.simpleweatherapp.data.repository.entity;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class City {
@@ -12,7 +13,7 @@ public class City {
     private Coord coord;
     @SerializedName("weather")
     @Expose
-    private List<Weather> weather = null;
+    private List<Weather> weather = new ArrayList<>();
     @SerializedName("base")
     @Expose
     private String base;
