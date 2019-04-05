@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/currentWeatherFragment"
+        android:icon="@drawable/ic_today_black_24dp"
+        android:title="Today" />
+    <item
+        android:id="@+id/citiesListFragment"
+        android:icon="@drawable/ic_view_list_black_24dp"
+        android:title="List" />
+</menu>
