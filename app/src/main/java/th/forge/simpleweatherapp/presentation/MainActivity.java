@@ -36,21 +36,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(bottomNav, navController);
         NavigationUI.setupActionBarWithNavController(this, navController);
 
-        /*App.getApiService().getCurrentWeather("Moscow").enqueue(new Callback<City>() {
-            @Override
-            public void onResponse(Call<City> call, Response<City> response) {
-                if (response.isSuccessful()) {
-                    if (response.body() != null) {
-
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<City> call, Throwable t) {
-
-            }
-        });*/
 
     }
 

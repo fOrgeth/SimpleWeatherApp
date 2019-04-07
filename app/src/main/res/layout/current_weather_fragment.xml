@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.current.CurrentWeatherFragment">
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/textView"
+    <data>
+
+        <variable
+            name="currentWeatherViewModel"
+            type="th.forge.simpleweatherapp.presentation.current.CurrentWeatherViewModel"/>
+    </data>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Current Weather" />
+        tools:context=".presentation.current.CurrentWeatherFragment">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/city_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{currentWeatherViewModel.city.getName()}"/>
+
+            <TextView
+                android:id="@+id/curr_temp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{Double.toString(currentWeatherViewModel.city.getMain().getTemp())}"/>
+        </LinearLayout>
+    </FrameLayout>
+</layout>
