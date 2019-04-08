@@ -9,10 +9,10 @@
         android:id="@+id/currentWeatherFragment"
         android:name="th.forge.simpleweatherapp.presentation.current.CurrentWeatherFragment"
         android:label="current_weather_fragment"
-        tools:layout="@layout/current_weather_fragment" />
+        tools:layout="@layout/fragment_current_weather" />
     <fragment
         android:id="@+id/citiesListFragment"
-        android:name="th.forge.simpleweatherapp.presentation.list.citiesListFragment"
+        android:name="th.forge.simpleweatherapp.presentation.list.CitiesListFragment"
         android:label="cities_list_fragment"
-        tools:layout="@layout/cities_list_fragment" />
+        tools:layout="@layout/fragment_cities_list" />
 </navigation>

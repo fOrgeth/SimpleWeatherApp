@@ -7,7 +7,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import th.forge.simpleweatherapp.app.App;
-import th.forge.simpleweatherapp.data.repository.entity.City;
+import th.forge.simpleweatherapp.data.db.weather.entity.City;
 import th.forge.simpleweatherapp.data.retrofit.ApiService;
 
 public class WeatherRepository {

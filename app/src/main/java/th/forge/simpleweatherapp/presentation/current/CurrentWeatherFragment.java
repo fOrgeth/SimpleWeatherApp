@@ -11,12 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import th.forge.simpleweatherapp.R;
-import th.forge.simpleweatherapp.databinding.CurrentWeatherFragmentBinding;
+import th.forge.simpleweatherapp.databinding.FragmentCurrentWeatherBinding;
 
 public class CurrentWeatherFragment extends Fragment {
 
     private CurrentWeatherViewModel viewModel;
-    private CurrentWeatherFragmentBinding binding;
+    private FragmentCurrentWeatherBinding binding;
     private String weather;
 
     public static CurrentWeatherFragment newInstance() {
@@ -27,7 +27,7 @@ public class CurrentWeatherFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater,
-                R.layout.current_weather_fragment,
+                R.layout.fragment_current_weather,
                 container,
                 false);
         return binding.getRoot();

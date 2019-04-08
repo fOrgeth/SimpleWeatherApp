@@ -1,6 +1,7 @@
 package th.forge.simpleweatherapp.presentation.list;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,26 +11,30 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import th.forge.simpleweatherapp.R;
+import th.forge.simpleweatherapp.databinding.FragmentCitiesListBinding;
 
-public class citiesListFragment extends Fragment {
+public class CitiesListFragment extends Fragment {
 
-    private CitiesListViewModel mViewModel;
+    private CitiesListViewModel viewModel;
+    private FragmentCitiesListBinding binding;
 
-    public static citiesListFragment newInstance() {
-        return new citiesListFragment();
+    public static CitiesListFragment newInstance() {
+        return new CitiesListFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.cities_list_fragment, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_cities_list, container, false);
+        return binding.getRoot();
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(CitiesListViewModel.class);
-        // TODO: Use the ViewModel
+        viewModel = ViewModelProviders.of(this).get(CitiesListViewModel.class);
+        binding.citiesRv.setAdapter(viewModel.getAdapter());
+        //ToDo
     }
 
 }

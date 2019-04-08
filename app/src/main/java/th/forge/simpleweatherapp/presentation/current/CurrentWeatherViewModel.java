@@ -1,14 +1,13 @@
 package th.forge.simpleweatherapp.presentation.current;
 
 import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 import android.databinding.ObservableField;
 import android.support.annotation.NonNull;
 
 import th.forge.simpleweatherapp.data.repository.WeatherRepository;
-import th.forge.simpleweatherapp.data.repository.entity.City;
+import th.forge.simpleweatherapp.data.db.weather.entity.City;
 
 public class CurrentWeatherViewModel extends ViewModel {
     private final LiveData<City> weatherObservable;

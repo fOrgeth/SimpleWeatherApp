@@ -10,12 +10,7 @@ import android.util.Log;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import th.forge.simpleweatherapp.R;
-import th.forge.simpleweatherapp.app.App;
-import th.forge.simpleweatherapp.data.repository.entity.City;
 
 public class MainActivity extends AppCompatActivity {
 
