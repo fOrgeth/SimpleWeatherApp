@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.list.citiesListFragment">
+    tools:context=".presentation.list.CitiesListFragment">
 
-    <TextView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/cities_rv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="List City" />
+        android:layout_height="match_parent"/>
 
 </FrameLayout>

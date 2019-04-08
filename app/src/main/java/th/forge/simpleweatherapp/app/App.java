@@ -1,6 +1,7 @@
 package th.forge.simpleweatherapp.app;
 
 import android.app.Application;
+import android.arch.persistence.room.Room;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -11,12 +12,14 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import th.forge.simpleweatherapp.BuildConfig;
+import th.forge.simpleweatherapp.data.db.citieslist.CitiesListDB;
 import th.forge.simpleweatherapp.data.retrofit.ApiKeyInterceptor;
 import th.forge.simpleweatherapp.data.retrofit.ApiService;
 
 public class App extends Application {
     private static ApiService apiService;
     private Retrofit retrofit;
+    private CitiesListDB db;
 
     @Override
     public void onCreate() {
@@ -38,6 +41,8 @@ public class App extends Application {
         if (apiService == null) {
             apiService = retrofit.create(ApiService.class);
         }
+        db = Room.databaseBuilder(this, CitiesListDB.class, "cities.db")
+                .build();
     }
 
     private Gson getGson() {
@@ -48,5 +53,9 @@ public class App extends Application {
 
     public static ApiService getApiService() {
         return apiService;
+    }
+
+    public CitiesListDB getDatabase() {
+        return db;
     }
 }

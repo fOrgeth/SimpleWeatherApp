@@ -1,4 +1,4 @@
-package th.forge.simpleweatherapp.data.repository.entity;
+package th.forge.simpleweatherapp.data.db.weather.entity;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
