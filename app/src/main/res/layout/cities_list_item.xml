@@ -6,22 +6,40 @@
     <data>
 
         <variable
+            name="location"
+            type="th.forge.simpleweatherapp.data.db.citieslist.Location" />
+
+        <!--<variable
             name="viewModel"
             type="th.forge.simpleweatherapp.presentation.list.CitiesListViewModel" />
 
         <variable
             name="position"
-            type="Integer" />
+            type="Integer" />-->
+
     </data>
 
-    <LinearLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="@dimen/item_rv_height"
+        android:layout_marginStart="@dimen/item_rv_horizontal_margin"
+        android:layout_marginEnd="@dimen/item_rv_horizontal_margin"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="@dimen/item_rv_corner_radius">
 
-        <TextView
-            android:id="@+id/city_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/item_rv_ll_padding">
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/city_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="@dimen/item_rv_title_text_size"
+                android:text="@{location.title}" />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
 </layout>

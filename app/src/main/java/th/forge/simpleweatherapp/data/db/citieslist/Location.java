@@ -6,17 +6,17 @@ import android.arch.persistence.room.PrimaryKey;
 @Entity(tableName = "cities_list")
 public class Location {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private long id;
     private String name;
     private String title;
 
-    public long getId() {
-        return id;
-    }
-
     public void setId(long id) {
         this.id = id;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public String getName() {

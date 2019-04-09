@@ -13,13 +13,14 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import th.forge.simpleweatherapp.BuildConfig;
 import th.forge.simpleweatherapp.data.db.citieslist.CitiesListDB;
+import th.forge.simpleweatherapp.data.db.citieslist.Sample;
 import th.forge.simpleweatherapp.data.retrofit.ApiKeyInterceptor;
 import th.forge.simpleweatherapp.data.retrofit.ApiService;
 
 public class App extends Application {
     private static ApiService apiService;
     private Retrofit retrofit;
-    private CitiesListDB db;
+    private static CitiesListDB db;
 
     @Override
     public void onCreate() {
@@ -41,8 +42,14 @@ public class App extends Application {
         if (apiService == null) {
             apiService = retrofit.create(ApiService.class);
         }
-        db = Room.databaseBuilder(this, CitiesListDB.class, "cities.db")
-                .build();
+        if (db == null) {
+            db = Room.databaseBuilder(this, CitiesListDB.class, "cities.db")
+                    .allowMainThreadQueries()
+                    .build();
+            //ToDo: delete later
+//            Sample.fillDb(this);
+        }
+
     }
 
     private Gson getGson() {
@@ -55,7 +62,7 @@ public class App extends Application {
         return apiService;
     }
 
-    public CitiesListDB getDatabase() {
+    public static CitiesListDB getDatabase() {
         return db;
     }
 }
