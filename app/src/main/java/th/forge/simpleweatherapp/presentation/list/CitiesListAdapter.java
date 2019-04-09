@@ -3,6 +3,7 @@ package th.forge.simpleweatherapp.presentation.list;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -19,9 +20,13 @@ public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.Ci
     private List<Location> items;
     private CitiesListViewModel viewModel;
 
+    @Nullable
+    private final LocationClickCallback callback;
+
     //ToDo clickcallback
 
-    public CitiesListAdapter() {
+    public CitiesListAdapter(@Nullable LocationClickCallback callback) {
+        this.callback = callback;
     }
 
     public void setLocations(List<Location> locations) {
@@ -34,6 +39,7 @@ public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.Ci
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         CitiesListItemBinding binding = DataBindingUtil.inflate(layoutInflater, R.layout.cities_list_item,
                 parent, false);
+        binding.setCallback(callback);
         return new CityViewHolder(binding);
     }
 

@@ -6,24 +6,24 @@ import com.google.gson.annotations.SerializedName;
 public class Wind {
     @SerializedName("speed")
     @Expose
-    private Long speed;
+    private Double speed;
     @SerializedName("deg")
     @Expose
-    private Long deg;
+    private Double deg;
 
-    public Long getSpeed() {
+    public Double getSpeed() {
         return speed;
     }
 
-    public void setSpeed(Long speed) {
+    public void setSpeed(Double speed) {
         this.speed = speed;
     }
 
-    public Long getDeg() {
+    public Double getDeg() {
         return deg;
     }
 
-    public void setDeg(Long deg) {
+    public void setDeg(Double deg) {
         this.deg = deg;
     }
 }

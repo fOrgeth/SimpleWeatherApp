@@ -15,12 +15,17 @@ import th.forge.simpleweatherapp.databinding.FragmentCurrentWeatherBinding;
 
 public class CurrentWeatherFragment extends Fragment {
 
+    private static final String KEY_LOC_NAME = "city_name";
     private CurrentWeatherViewModel viewModel;
     private FragmentCurrentWeatherBinding binding;
     private String weather;
 
-    public static CurrentWeatherFragment newInstance() {
-        return new CurrentWeatherFragment();
+    public static CurrentWeatherFragment newInstance(String location) {
+        CurrentWeatherFragment fragment = new CurrentWeatherFragment();
+        Bundle args = new Bundle();
+        args.putString(KEY_LOC_NAME, location);
+        fragment.setArguments(args);
+        return fragment;
     }
 
     @Override
@@ -36,8 +41,12 @@ public class CurrentWeatherFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        String cityName = "Moscow";
+        if (getArguments() != null) {
+            cityName = getArguments().getString(KEY_LOC_NAME);
+        }
         viewModel = ViewModelProviders.of(this,
-                new CurrentWeatherViewModel.Factory("Kazan"))
+                new CurrentWeatherViewModel.Factory(cityName))
                 .get(CurrentWeatherViewModel.class);
         binding.setCurrentWeatherViewModel(viewModel);
         viewModel.getObservableWeather().observe(this, city -> {

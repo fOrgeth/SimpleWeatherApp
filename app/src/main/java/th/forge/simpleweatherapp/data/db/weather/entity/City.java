@@ -11,36 +11,46 @@ public class City {
     @SerializedName("coord")
     @Expose
     private Coord coord;
+
     @SerializedName("weather")
     @Expose
     private List<Weather> weather = new ArrayList<>();
+
     @SerializedName("base")
     @Expose
     private String base;
+
     @SerializedName("main")
     @Expose
     private Main main;
+
     @SerializedName("visibility")
-    @Expose
     private Long visibility;
+
     @SerializedName("wind")
     @Expose
     private Wind wind;
+
     @SerializedName("clouds")
     @Expose
     private Clouds clouds;
+
     @SerializedName("dt")
     @Expose
     private Long dt;
+
     @SerializedName("sys")
     @Expose
     private Sys sys;
+
     @SerializedName("id")
     @Expose
     private Long id;
+
     @SerializedName("name")
     @Expose
     private String name;
+
     @SerializedName("cod")
     @Expose
     private Long cod;

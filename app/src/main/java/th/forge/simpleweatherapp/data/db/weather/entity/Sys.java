@@ -7,18 +7,22 @@ public class Sys {
     @SerializedName("type")
     @Expose
     private Long type;
+
     @SerializedName("id")
-    @Expose
     private Long id;
+
     @SerializedName("message")
     @Expose
     private Double message;
+
     @SerializedName("country")
     @Expose
     private String country;
+
     @SerializedName("sunrise")
     @Expose
     private Long sunrise;
+
     @SerializedName("sunset")
     @Expose
     private Long sunset;

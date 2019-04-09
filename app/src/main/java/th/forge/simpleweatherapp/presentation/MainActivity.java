@@ -11,6 +11,8 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 import th.forge.simpleweatherapp.R;
+import th.forge.simpleweatherapp.data.db.citieslist.Location;
+import th.forge.simpleweatherapp.presentation.current.CurrentWeatherFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, (DrawerLayout) null);
     }
 
-
+    public void show(Location location) {
+        CurrentWeatherFragment currentWeatherFragment = CurrentWeatherFragment.newInstance(location.getName());
+        getSupportFragmentManager().beginTransaction()
+                .addToBackStack("location")
+                .replace(R.id.nav_host_fragment, currentWeatherFragment, null)
+                .commit();
+    }
 
 }
