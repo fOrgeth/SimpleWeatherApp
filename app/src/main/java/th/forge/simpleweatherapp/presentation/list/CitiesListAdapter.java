@@ -20,8 +20,6 @@ public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.Ci
     @Nullable
     private final LocationClickCallback callback;
 
-    //ToDo clickcallback
-
     public CitiesListAdapter(@Nullable LocationClickCallback callback) {
         this.callback = callback;
     }
@@ -59,7 +57,7 @@ public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.Ci
             this.binding = binding;
         }
 
-        void bind(Integer position) {
+        void bind(int position) {
             binding.setLocation(items.get(position));
             binding.executePendingBindings();
         }

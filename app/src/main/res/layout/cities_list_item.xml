@@ -33,7 +33,7 @@
                 android:layout_marginTop="@dimen/item_rv_horizontal_margin"
                 android:layout_marginEnd="@dimen/item_rv_horizontal_margin"
                 android:layout_marginBottom="@dimen/item_rv_horizontal_margin"
-                android:text="@{location.title}"
+                android:text="@{location.name}"
                 android:textSize="@dimen/item_rv_title_text_size"
                 android:textStyle="bold" />
 

@@ -18,6 +18,7 @@ public class CurrentWeatherFragment extends Fragment {
     public static final String KEY_LOC_NAME = "city_name";
     private CurrentWeatherViewModel viewModel;
     private FragmentCurrentWeatherBinding binding;
+    private String cityName;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
