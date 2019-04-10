@@ -11,9 +11,11 @@ import th.forge.simpleweatherapp.data.repository.CitiesListRepository;
 public class CitiesListViewModel extends ViewModel {
 
     private final LiveData<List<Location>> locationListObservable;
+    private CitiesListRepository citiesListRepository;
 
     public CitiesListViewModel() {
-        this.locationListObservable = CitiesListRepository.getInstance().getCitiesList();
+        citiesListRepository = CitiesListRepository.getInstance();
+        this.locationListObservable = citiesListRepository.getCitiesList();
     }
 
     public LiveData<List<Location>> getLocationListObservable() {
@@ -22,5 +24,9 @@ public class CitiesListViewModel extends ViewModel {
 
     public Location getLocationAt(Integer position) {
         return new Location();
+    }
+
+    public void addCity(String cityName) {
+        citiesListRepository.addCity(cityName);
     }
 }

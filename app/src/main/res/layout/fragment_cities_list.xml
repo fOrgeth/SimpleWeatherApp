@@ -8,6 +8,10 @@
         <variable
             name="viewModel"
             type="th.forge.simpleweatherapp.presentation.list.CitiesListViewModel" />
+
+        <variable
+            name="fabCallback"
+            type="th.forge.simpleweatherapp.presentation.list.FabClickListener" />
     </data>
 
     <android.support.constraint.ConstraintLayout
@@ -26,6 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/fab_layout_margin"
+            android:onClick="@{(view) -> fabCallback.onClick(view)}"
             android:src="@drawable/ic_add_black_24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />

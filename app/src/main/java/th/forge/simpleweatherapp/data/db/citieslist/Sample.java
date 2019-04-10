@@ -13,7 +13,6 @@ public class Sample {
         for (String city : cities) {
             Location location = new Location();
             location.setName(city);
-            location.setTitle(city+"_");
             dao.insert(location);
         }
     }

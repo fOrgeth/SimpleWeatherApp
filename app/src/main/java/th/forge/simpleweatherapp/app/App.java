@@ -44,6 +44,7 @@ public class App extends Application {
         }
         if (db == null) {
             db = Room.databaseBuilder(this, CitiesListDB.class, "cities.db")
+                    //ToDo: use Threads
                     .allowMainThreadQueries()
                     .build();
             //ToDo: delete later

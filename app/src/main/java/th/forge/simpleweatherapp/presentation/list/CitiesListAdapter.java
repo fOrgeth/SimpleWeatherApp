@@ -26,6 +26,7 @@ public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.Ci
 
     public void setLocations(List<Location> locations) {
         this.items = locations;
+        notifyDataSetChanged();
     }
 
     @NonNull

@@ -30,7 +30,7 @@
                 android:id="@+id/curr_temp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{Double.toString(currentWeatherViewModel.city.getMain().getTemp())}"/>
+                android:text="@{Integer.toString((currentWeatherViewModel.city.getMain().getTemp()).intValue)}"/>
         </LinearLayout>
     </FrameLayout>
 </layout>
