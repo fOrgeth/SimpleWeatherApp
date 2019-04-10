@@ -14,5 +14,9 @@
         android:id="@+id/citiesListFragment"
         android:name="th.forge.simpleweatherapp.presentation.list.CitiesListFragment"
         android:label="cities_list_fragment"
-        tools:layout="@layout/fragment_cities_list" />
+        tools:layout="@layout/fragment_cities_list" >
+        <action
+            android:id="@+id/action_citiesListFragment_to_currentWeatherFragment"
+            app:destination="@id/currentWeatherFragment" />
+    </fragment>
 </navigation>
