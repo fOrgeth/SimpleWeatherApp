@@ -10,7 +10,7 @@
             type="th.forge.simpleweatherapp.presentation.list.CitiesListViewModel" />
     </data>
 
-    <FrameLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".presentation.list.CitiesListFragment">
@@ -19,9 +19,16 @@
             android:id="@+id/cities_rv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
-            <!--app:setAdapter="@{viewModel.getAdapter()}" -->
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
 
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_layout_margin"
+            android:src="@drawable/ic_add_black_24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    </FrameLayout>
+    </android.support.constraint.ConstraintLayout>
 </layout>

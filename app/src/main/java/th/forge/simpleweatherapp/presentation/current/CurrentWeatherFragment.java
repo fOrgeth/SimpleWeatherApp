@@ -33,7 +33,9 @@ public class CurrentWeatherFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        String cityName = "Moscow";
+        if (cityName == null) {
+
+        }
         if (getArguments() != null) {
             cityName = getArguments().getString(KEY_LOC_NAME);
         }
