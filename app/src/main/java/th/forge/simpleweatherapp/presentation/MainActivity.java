@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, (DrawerLayout) null);
     }
 
-    //ToDo: release navigation
     public void show(Location location) {
         CurrentWeatherFragment currentWeatherFragment = CurrentWeatherFragment.newInstance(location.getName());
         getSupportFragmentManager().beginTransaction()
