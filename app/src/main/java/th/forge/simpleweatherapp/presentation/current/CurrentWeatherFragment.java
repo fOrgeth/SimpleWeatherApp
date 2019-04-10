@@ -15,18 +15,9 @@ import th.forge.simpleweatherapp.databinding.FragmentCurrentWeatherBinding;
 
 public class CurrentWeatherFragment extends Fragment {
 
-    private static final String KEY_LOC_NAME = "city_name";
+    public static final String KEY_LOC_NAME = "city_name";
     private CurrentWeatherViewModel viewModel;
     private FragmentCurrentWeatherBinding binding;
-    private String weather;
-
-    public static CurrentWeatherFragment newInstance(String location) {
-        CurrentWeatherFragment fragment = new CurrentWeatherFragment();
-        Bundle args = new Bundle();
-        args.putString(KEY_LOC_NAME, location);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -54,11 +45,5 @@ public class CurrentWeatherFragment extends Fragment {
                 viewModel.setCity(city);
             }
         });
-
     }
-
-    private void updateUI() {
-
-    }
-
 }

@@ -18,6 +18,7 @@ public class WeatherRepository {
         apiService = App.getApiService();
     }
 
+    //ToDo: DI
     public synchronized static WeatherRepository getInstance() {
         if (weatherRepository == null) {
             weatherRepository = new WeatherRepository();

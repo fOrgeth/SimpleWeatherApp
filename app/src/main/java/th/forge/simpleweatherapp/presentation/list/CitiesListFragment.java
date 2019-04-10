@@ -1,7 +1,6 @@
 package th.forge.simpleweatherapp.presentation.list;
 
 import android.arch.lifecycle.Lifecycle;
-import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
@@ -13,9 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
+import androidx.navigation.Navigation;
 import th.forge.simpleweatherapp.R;
 import th.forge.simpleweatherapp.databinding.FragmentCitiesListBinding;
-import th.forge.simpleweatherapp.presentation.MainActivity;
+
+import static th.forge.simpleweatherapp.presentation.current.CurrentWeatherFragment.KEY_LOC_NAME;
 
 public class CitiesListFragment extends Fragment {
 
@@ -23,13 +24,11 @@ public class CitiesListFragment extends Fragment {
     private FragmentCitiesListBinding binding;
     private CitiesListAdapter citiesAdapter;
 
-    public static CitiesListFragment newInstance() {
-        return new CitiesListFragment();
-    }
-
-    private final LocationClickCallback locationClickCallback = location -> {
+    private final LocationClickCallback locationClickCallback = (view, location) -> {
         if (getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.STARTED)) {
-            ((MainActivity)getActivity()).show(location);
+            Bundle args = new Bundle();
+            args.putString(KEY_LOC_NAME, location.getName());
+            Navigation.findNavController(view).navigate(R.id.action_citiesListFragment_to_currentWeatherFragment, args);
         }
     };
 
@@ -46,11 +45,12 @@ public class CitiesListFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         viewModel = ViewModelProviders.of(this).get(CitiesListViewModel.class);
-        /*if (savedInstanceState == null) {
-            viewModel.init();
-        }*/
-        //ToDo
         observeViewModel(viewModel);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
     }
 
     private void observeViewModel(CitiesListViewModel viewModel) {

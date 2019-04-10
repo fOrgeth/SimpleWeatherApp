@@ -17,6 +17,7 @@ public class CitiesListRepository {
         db = App.getDatabase();
     }
 
+    //ToDo: DI
     public synchronized static CitiesListRepository getInstance() {
         if (citiesListRepository == null) {
             citiesListRepository = new CitiesListRepository();
