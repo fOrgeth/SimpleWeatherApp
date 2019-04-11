@@ -10,13 +10,19 @@
 
         <variable
             name="callback"
-            type="th.forge.simpleweatherapp.presentation.list.LocationClickCallback" />
+            type="th.forge.simpleweatherapp.presentation.list.LocationClickListener" />
+
+        <variable
+            name="deleteCallback"
+            type="th.forge.simpleweatherapp.presentation.list.LocationDeleteListener" />
+
     </data>
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="@{(view) -> callback.onClick(view, location)}"
+        android:onLongClick="@{() -> deleteCallback.onLongClickOnHeading(location.id)}"
         app:cardCornerRadius="@dimen/item_rv_corner_radius"
         app:cardUseCompatPadding="true">
 
@@ -28,7 +34,7 @@
             <TextView
                 android:id="@+id/city_title"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginStart="@dimen/item_rv_horizontal_margin"
                 android:layout_marginTop="@dimen/item_rv_horizontal_margin"
                 android:layout_marginEnd="@dimen/item_rv_horizontal_margin"

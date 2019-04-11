@@ -16,8 +16,8 @@ public interface LocationDao {
     @Query("SELECT * FROM cities_list")
     LiveData<List<Location>> getAll();
 
-    /*@Query("SELECT * FROM cities_list WHERE id = :id")
-    Location getById(long id);*/
+    @Query("SELECT * FROM cities_list WHERE id = :id")
+    Location getById(long id);
 
     @Insert(onConflict = REPLACE)
     void insert(Location location);

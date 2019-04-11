@@ -30,9 +30,6 @@ public class CitiesListRepository {
     }
 
     public LiveData<List<Location>> getCitiesList() {
-        /*MutableLiveData<List<Location>> data = new MutableLiveData<>();
-        data.setValue(locationDao.getAll());
-        return data;*/
         return citiesList;
     }
 
@@ -40,5 +37,9 @@ public class CitiesListRepository {
         Location location = new Location();
         location.setName(cityName);
         locationDao.insert(location);
+    }
+
+    public void deleteCity(long id) {
+        locationDao.delete(locationDao.getById(id));
     }
 }

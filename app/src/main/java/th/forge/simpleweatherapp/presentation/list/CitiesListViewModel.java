@@ -26,7 +26,7 @@ public class CitiesListViewModel extends ViewModel {
         return new Location();
     }
 
-    public void addCity(String cityName) {
-        citiesListRepository.addCity(cityName);
+    public void deleteLocation(long id) {
+        citiesListRepository.deleteCity(id);
     }
 }

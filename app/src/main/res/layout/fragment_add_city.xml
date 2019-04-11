@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="cityName"
+            type="String" />
+
+        <variable
+            name="saveCallback"
+            type="th.forge.simpleweatherapp.presentation.list.add.SaveClickListener" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.list.add.AddCityFragment">
+
+        <EditText
+            android:id="@+id/et_city_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/item_rv_horizontal_margin"
+            android:hint="@string/et_add_city_name"
+            android:text="@={cityName}"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/btn_add_top_margin"
+            android:onClick="@{(view) -> saveCallback.onClick(view, cityName)}"
+            android:text="@string/btn_save_city"
+            app:layout_constraintEnd_toEndOf="@id/et_city_name"
+            app:layout_constraintStart_toStartOf="@id/et_city_name"
+            app:layout_constraintTop_toBottomOf="@id/et_city_name"/>
+    </android.support.constraint.ConstraintLayout>
+</layout>

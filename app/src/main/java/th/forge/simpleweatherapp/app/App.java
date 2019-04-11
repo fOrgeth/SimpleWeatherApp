@@ -13,7 +13,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import th.forge.simpleweatherapp.BuildConfig;
 import th.forge.simpleweatherapp.data.db.citieslist.CitiesListDB;
-import th.forge.simpleweatherapp.data.db.citieslist.Sample;
 import th.forge.simpleweatherapp.data.retrofit.ApiKeyInterceptor;
 import th.forge.simpleweatherapp.data.retrofit.ApiService;
 
@@ -47,8 +46,6 @@ public class App extends Application {
                     //ToDo: use Threads
                     .allowMainThreadQueries()
                     .build();
-            //ToDo: delete later
-//            Sample.fillDb(this);
         }
 
     }
