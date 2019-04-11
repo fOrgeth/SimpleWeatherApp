@@ -9,7 +9,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import androidx.navigation.Navigation;
 import th.forge.simpleweatherapp.R;
 import th.forge.simpleweatherapp.databinding.FragmentCurrentWeatherBinding;
 
@@ -33,9 +35,13 @@ public class CurrentWeatherFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        String cityName = "Moscow";
         if (getArguments() != null) {
             cityName = getArguments().getString(KEY_LOC_NAME);
+        }
+        //ToDo: add correct null handling
+        if (cityName == null) {
+            Toast.makeText(binding.getRoot().getContext(), "Select City", Toast.LENGTH_LONG).show();
+            Navigation.findNavController(binding.getRoot()).navigate(R.id.citiesListFragment);
         }
         viewModel = ViewModelProviders.of(this,
                 new CurrentWeatherViewModel.Factory(cityName))

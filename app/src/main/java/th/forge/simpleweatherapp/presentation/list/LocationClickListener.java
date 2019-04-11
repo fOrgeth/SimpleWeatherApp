@@ -4,6 +4,6 @@ import android.view.View;
 
 import th.forge.simpleweatherapp.data.db.citieslist.Location;
 
-public interface LocationClickCallback {
+public interface LocationClickListener {
     void onClick(View view, Location location);
 }

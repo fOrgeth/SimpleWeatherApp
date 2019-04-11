@@ -18,14 +18,19 @@ public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.Ci
     private List<Location> items;
 
     @Nullable
-    private final LocationClickCallback callback;
+    private final LocationDeleteListener deleteCallback;
+    @Nullable
+    private final LocationClickListener callback;
 
-    public CitiesListAdapter(@Nullable LocationClickCallback callback) {
+    public CitiesListAdapter(@Nullable LocationClickListener callback,
+                             @Nullable LocationDeleteListener deleteCallback) {
         this.callback = callback;
+        this.deleteCallback = deleteCallback;
     }
 
     public void setLocations(List<Location> locations) {
         this.items = locations;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -35,6 +40,7 @@ public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.Ci
         CitiesListItemBinding binding = DataBindingUtil.inflate(layoutInflater, R.layout.cities_list_item,
                 parent, false);
         binding.setCallback(callback);
+        binding.setDeleteCallback(deleteCallback);
         return new CityViewHolder(binding);
     }
 
