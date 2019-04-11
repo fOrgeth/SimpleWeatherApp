@@ -8,23 +8,24 @@
     <fragment
         android:id="@+id/currentWeatherFragment"
         android:name="th.forge.simpleweatherapp.presentation.current.CurrentWeatherFragment"
-        android:label="current_weather_fragment"
+        android:label="@string/fr_cur_weather_title"
         tools:layout="@layout/fragment_current_weather" />
     <fragment
         android:id="@+id/citiesListFragment"
         android:name="th.forge.simpleweatherapp.presentation.list.CitiesListFragment"
-        android:label="cities_list_fragment"
+        android:label="@string/fr_cities_list_title"
         tools:layout="@layout/fragment_cities_list" >
         <action
             android:id="@+id/action_citiesListFragment_to_currentWeatherFragment"
             app:destination="@id/currentWeatherFragment" />
         <action
             android:id="@+id/action_citiesListFragment_to_addCityFragment"
-            app:destination="@id/addCityFragment" />
+            app:destination="@id/addCityFragment"
+            app:launchSingleTop="false" />
     </fragment>
     <fragment
         android:id="@+id/addCityFragment"
         android:name="th.forge.simpleweatherapp.presentation.list.add.AddCityFragment"
-        android:label="fragment_add_city"
+        android:label="@string/fr_add_city_title"
         tools:layout="@layout/fragment_add_city" />
 </navigation>

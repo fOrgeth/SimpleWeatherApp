@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Toast;
 
 import androidx.navigation.Navigation;
 import th.forge.simpleweatherapp.R;
@@ -22,9 +23,13 @@ public class AddCityFragment extends Fragment {
     private FragmentAddCityBinding binding;
 
     private final SaveClickListener saveClickListener = (view, cityName) -> {
-        viewModel.addCity(cityName);
-        hideKeyboard(view);
-        Navigation.findNavController(view).navigate(R.id.citiesListFragment);
+        if (cityName == null || cityName.isEmpty()) {
+            Toast.makeText(binding.getRoot().getContext(), "Please Enter City", Toast.LENGTH_LONG).show();
+        } else {
+            viewModel.addCity(cityName);
+            hideKeyboard(view);
+            Navigation.findNavController(view).navigate(R.id.citiesListFragment);
+        }
     };
 
     private void hideKeyboard(View view) {
@@ -44,7 +49,6 @@ public class AddCityFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         viewModel = ViewModelProviders.of(this).get(AddCityViewModel.class);
-        // TODO: Use the ViewModel
     }
 
 }

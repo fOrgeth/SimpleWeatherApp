@@ -2,4 +2,7 @@
     <string name="app_name">SimpleWeatherApp</string>
     <string name="btn_save_city">Save</string>
     <string name="et_add_city_name">Enter correct city name</string>
+    <string name="fr_cur_weather_title">Current Weather</string>
+    <string name="fr_cities_list_title">Cities List</string>
+    <string name="fr_add_city_title">Add city</string>
 </resources>

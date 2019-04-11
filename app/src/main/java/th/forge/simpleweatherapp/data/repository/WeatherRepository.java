@@ -36,7 +36,7 @@ public class WeatherRepository {
 
             @Override
             public void onFailure(Call<City> call, Throwable t) {
-
+                //ToDo: handle error
             }
         });
         return currentWeather;
