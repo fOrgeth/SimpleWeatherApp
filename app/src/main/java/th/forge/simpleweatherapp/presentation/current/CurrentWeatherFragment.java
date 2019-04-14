@@ -44,7 +44,7 @@ public class CurrentWeatherFragment extends Fragment {
             Navigation.findNavController(binding.getRoot()).navigate(R.id.citiesListFragment);
         }
         viewModel = ViewModelProviders.of(this,
-                new CurrentWeatherViewModel.Factory(cityName))
+                new CurrentWeatherViewModelFactory.Factory(cityName))
                 .get(CurrentWeatherViewModel.class);
         binding.setCurrentWeatherViewModel(viewModel);
         viewModel.getObservableWeather().observe(this, city -> {

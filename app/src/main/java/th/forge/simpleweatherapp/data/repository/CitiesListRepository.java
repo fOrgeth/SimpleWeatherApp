@@ -1,7 +1,6 @@
 package th.forge.simpleweatherapp.data.repository;
 
 import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
 
 import java.util.List;
 
